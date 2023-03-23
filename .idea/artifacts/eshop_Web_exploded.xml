@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="eshop:Web exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/eshop_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="eshop/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="javaee-facet-classes" facet="eshop/web/Web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="junit5" module-name="eshop" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
