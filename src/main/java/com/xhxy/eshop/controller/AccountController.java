@@ -6,7 +6,7 @@ import com.xhxy.eshop.entity.User;
 import com.xhxy.eshop.service.AddressService;
 import com.xhxy.eshop.service.OrderService;
 import com.xhxy.eshop.service.UserService;
-import com.xhxy.eshop.service.impl.jdbc.AddressServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.AddressServiceImpl;
 import com.xhxy.eshop.service.impl.jdbc.OrderServiceImpl;
 import com.xhxy.eshop.service.impl.jdbc.UserServiceImpl;
 
