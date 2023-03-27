@@ -10,7 +10,7 @@ public class Address {
 	private String consigneeAddress;		// 收货地址
 	private String consigneePhone;			// 收货手机号
 	private String postcode;				// 邮编
-	
+
 	private User user;						// 用户
 	
 	//  ----- getter/setter ------
@@ -50,6 +50,5 @@ public class Address {
 	public void setConsigneePhone(String consigneePhone) {
 		this.consigneePhone = consigneePhone;
 	}
-	
-	
+
 }
