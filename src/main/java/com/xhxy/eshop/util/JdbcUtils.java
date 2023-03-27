@@ -1,8 +1,9 @@
 package com.xhxy.eshop.util;
 
-import com.mysql.cj.jdbc.Driver;
+import org.junit.Test;
 
 import java.sql.Connection;
+import java.sql.Driver;
 import java.util.Properties;
 
 public class JdbcUtils {
@@ -44,10 +45,10 @@ public class JdbcUtils {
         return driver.connect(url, properties);
     }
 
-//    @Test
-//    public void test() throws Exception {
-//        Connection connection = JdbcUtils.getConnection();
-//        System.out.println(connection);
-//    }
+    @Test
+    public void test() throws Exception {
+        Connection connection = JdbcUtils.getConnection();
+        System.out.println(connection);
+    }
 
 }

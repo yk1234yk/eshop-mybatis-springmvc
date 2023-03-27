@@ -5,9 +5,9 @@ import com.xhxy.eshop.entity.Comment;
 import com.xhxy.eshop.service.BlogService;
 import com.xhxy.eshop.service.CommentService;
 import com.xhxy.eshop.service.UserService;
-import com.xhxy.eshop.service.impl.jdbc.BlogServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.BlogServiceImpl;
 import com.xhxy.eshop.service.impl.jdbc.CommentServiceImpl;
-import com.xhxy.eshop.service.impl.jdbc.UserServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.UserServiceImpl;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;

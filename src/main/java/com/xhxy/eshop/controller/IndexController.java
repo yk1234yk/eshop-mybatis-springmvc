@@ -6,7 +6,7 @@ import com.xhxy.eshop.entity.Product;
 import com.xhxy.eshop.service.BlogService;
 import com.xhxy.eshop.service.CategoryService;
 import com.xhxy.eshop.service.ProductService;
-import com.xhxy.eshop.service.impl.jdbc.BlogServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.BlogServiceImpl;
 import com.xhxy.eshop.service.impl.jdbc.CategoryServiceImpl;
 import com.xhxy.eshop.service.impl.jdbc.ProductServiceImpl;
 
