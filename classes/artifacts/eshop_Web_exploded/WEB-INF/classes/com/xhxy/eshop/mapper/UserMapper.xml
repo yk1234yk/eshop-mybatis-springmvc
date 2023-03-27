@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xhxy.eshop.mapper.UserMapper">
+    <!--    添加用户-->
+    <insert id="addUser">
+        insert into user(username,password,phone,email,avatar)
+        values(#{username},#{password},#{phone},#{email},#{avatar})
+    </insert>
+    <!--    登录-->
+    <select id="login" resultType="integer">
+        select * from user where username = #{username} and password = #{password}
+    </select>
+    <!--    查询用户-->
+    <select id="findById" resultType="com.xhxy.eshop.entity.User">
+        select * from user where id = #{id}
+    </select>
+    <!--    修改信息-->
+    <update id="update">
+        update user set username =#{username},email=#{email},phone=#{phone},avatar=#{avatar},password=#{password} where
+        id = #{id}
+    </update>
+    <!--    用id获取密码-->
+    <select id="findPasswordById" resultType="string">
+        select password from user where id = #{id}
+    </select>
+</mapper>
