@@ -5,7 +5,7 @@ import com.xhxy.eshop.entity.User;
 import com.xhxy.eshop.service.CartService;
 import com.xhxy.eshop.service.UserService;
 import com.xhxy.eshop.service.impl.jdbc.CartServiceImpl;
-import com.xhxy.eshop.service.impl.jdbc.UserServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
