@@ -5,10 +5,7 @@
       <element id="javaee-facet-resources" facet="eshop/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="javaee-facet-classes" facet="eshop/web/Web" />
-        </element>
-        <element id="directory" name="lib">
-          <element id="library" level="module" name="junit5" module-name="eshop" />
+          <element id="module-output" name="eshop" />
         </element>
       </element>
     </root>

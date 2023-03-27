@@ -1,16 +1,9 @@
 package com.xhxy.eshop.util;
 
 import com.mysql.cj.jdbc.Driver;
-import org.junit.Test;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Properties;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 public class JdbcUtils {
 //	// 静态方法：查找并返回数据源对象
@@ -40,7 +33,7 @@ public class JdbcUtils {
 //		}
 
     public static Connection getConnection() throws Exception {
-        Class aClass = Class.forName("com.mysql.cj.jdbc.Driver");
+        Class<?> aClass = Class.forName("com.mysql.cj.jdbc.Driver");
         Driver driver = (Driver) aClass.newInstance();
         String url = "jdbc:mysql://localhost:3306/eshop";
 
@@ -48,14 +41,13 @@ public class JdbcUtils {
         properties.setProperty("user", "root");
         properties.setProperty("password", "yk20010924yk");
 
-        Connection connect = driver.connect(url, properties);
-        return connect;
+        return driver.connect(url, properties);
     }
 
-    @Test
-    public void test() throws Exception {
-        Connection connection = JdbcUtils.getConnection();
-        System.out.println(connection);
-    }
+//    @Test
+//    public void test() throws Exception {
+//        Connection connection = JdbcUtils.getConnection();
+//        System.out.println(connection);
+//    }
 
 }
