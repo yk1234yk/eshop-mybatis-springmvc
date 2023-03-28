@@ -5,7 +5,7 @@ import com.xhxy.eshop.entity.Product;
 import com.xhxy.eshop.service.EvaluationService;
 import com.xhxy.eshop.service.ProductService;
 import com.xhxy.eshop.service.impl.jdbc.EvaluationServiceImpl;
-import com.xhxy.eshop.service.impl.jdbc.ProductServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.ProductServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
