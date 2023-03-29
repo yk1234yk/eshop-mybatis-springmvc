@@ -7,8 +7,8 @@ import com.xhxy.eshop.service.AddressService;
 import com.xhxy.eshop.service.OrderService;
 import com.xhxy.eshop.service.UserService;
 import com.xhxy.eshop.service.impl.mybatis.AddressServiceImpl;
-import com.xhxy.eshop.service.impl.jdbc.OrderServiceImpl;
-import com.xhxy.eshop.service.impl.jdbc.UserServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.OrderServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
