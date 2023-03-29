@@ -4,7 +4,7 @@ import com.xhxy.eshop.entity.Category;
 import com.xhxy.eshop.entity.Product;
 import com.xhxy.eshop.service.CategoryService;
 import com.xhxy.eshop.service.ProductService;
-import com.xhxy.eshop.service.impl.jdbc.CategoryServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.CategoryServiceImpl;
 import com.xhxy.eshop.service.impl.mybatis.ProductServiceImpl;
 
 import javax.servlet.ServletException;
