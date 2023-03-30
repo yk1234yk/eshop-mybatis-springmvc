@@ -8,6 +8,10 @@
     <typeAliases>
         <package name="com.xhxy.eshop.entity"/>
     </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                     javaType="com.xhxy.eshop.entity.Status"/>
+    </typeHandlers>
 
     <environments default="development">
         <environment id="development">
