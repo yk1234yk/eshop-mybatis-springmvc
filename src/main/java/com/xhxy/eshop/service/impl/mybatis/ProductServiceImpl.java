@@ -38,8 +38,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Product> findByKeywords(String name, String brief, String detail) {
-		// 暂未实现
-		return null;
+		return productMapper.findByKeywords(name,brief,detail);
 	}
 
 }
