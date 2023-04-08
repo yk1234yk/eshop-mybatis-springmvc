@@ -13,9 +13,24 @@
         select * from user where username = #{username} and password = #{password}
     </select>
     <!--    查询用户-->
-    <select id="findById" resultType="com.xhxy.eshop.entity.User">
+    <select id="findById" resultMap="userMap">
         select * from user where id = #{id}
     </select>
+    <resultMap id="userMap" type="com.xhxy.eshop.entity.User">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="email" property="email"/>
+        <result column="phone" property="phone"/>
+        <result column="avatar" property="avatar"/>
+        <discriminator javaType="int" column="user_type">
+            <case value="1" resultMap="adminMap"/>
+        </discriminator>
+    </resultMap>
+    <resultMap id="adminMap" type="com.xhxy.eshop.entity.Admin" extends="userMap">
+        <result column="department" property="department"/>
+    </resultMap>
+
     <!--    修改信息-->
     <update id="update">
         update user

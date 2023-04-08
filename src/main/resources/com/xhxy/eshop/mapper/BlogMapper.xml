@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xhxy.eshop.mapper.BlogMapper">
-    <select id="findAll" resultType="com.xhxy.eshop.entity.Blog">
+    <select id="findAll" resultMap="blogMap">
         select * from blog
     </select>
     <select id="findLatestBlog" resultType="com.xhxy.eshop.entity.Blog">
@@ -19,6 +19,11 @@
         <result column="content" property="content"/>
         <result column="pic" property="pic"/>
         <result property="createTime" column="createTime"/>
+        <association property="admin" column="admin_id"
+                     javaType="com.xhxy.eshop.entity.Admin"
+                     select="com.xhxy.eshop.mapper.UserMapper.findById"
+                     fetchType="lazy"/>
+
         <collection property="commentList" column="id" javaType="ArrayList"
                     ofType="com.xhxy.eshop.entity.Comment"
                     select="com.xhxy.eshop.mapper.CommentMapper.findByBlogId"

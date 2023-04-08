@@ -11,9 +11,19 @@ public class Blog {
 	private Integer id;
 	private String title;		// 标题
 	private String pic;			// 标题图片
+
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+
 	private String content;		// 正文
 	private Date createTime;	// 创建时间
-	
+
+	private Admin admin;		//发布管理员
 	private List<Comment> commentList;	// 评论集
 
 	// getter和setter
