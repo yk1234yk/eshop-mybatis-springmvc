@@ -18,8 +18,19 @@
     </select>
     <!--    修改信息-->
     <update id="update">
-        update user set username =#{username},email=#{email},phone=#{phone},avatar=#{avatar},password=#{password} where
-        id = #{id}
+        update user
+        <set>
+            username=#{username},phone=#{phone},email=#{email},
+            <!--当password不为null,增加password的更新-->
+            <if test="password!=null">
+                password=#{password},
+            </if>
+            <!-- 当avatar不为null，增加avatar的更新-->
+            <if test="avatar!=null">
+                avatar=#{avatar}
+            </if>
+        </set>
+        where id = #{id}
     </update>
     <!--    用id获取密码-->
     <select id="findPasswordById" resultType="string">

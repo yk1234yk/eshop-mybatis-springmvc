@@ -177,11 +177,11 @@ public class AccountController   extends BaseServlet{
 		
 		// 2.要不要替换密码
 		String currPassword = userService.findPasswordById(id);
-		
-		if(password !=null && password.equals(currPassword) && newPassword != null && (!newPassword.isEmpty())) {
+		if (password.isBlank()){
+			password=null;
+		}
+		else if (password !=null && password.equals(currPassword) && newPassword != null && (!newPassword.isEmpty())){
 			password = newPassword;
-		}else { // 保持原密码
-			password = currPassword; 
 		}
 		// 3.User的常规属性
 		User user = new User();
@@ -194,7 +194,8 @@ public class AccountController   extends BaseServlet{
 		// 4.上传头像文件的处理
 		Part part = request.getPart("avatar");
 		if(part.getSize() == 0) {	// 若没上传头像，则保持原头像不变
-			user.setAvatar(userService.findById(id).getAvatar());	
+			user.setAvatar(userService.findById(id).getAvatar());
+			user.setAvatar(null);
 		}
 		else {				// 若上传头像，则
 			String filePath = this.getServletContext().getRealPath("/");

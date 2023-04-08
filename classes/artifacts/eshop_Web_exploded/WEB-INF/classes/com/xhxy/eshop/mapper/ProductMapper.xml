@@ -47,4 +47,20 @@
         select * from product where latest = 1 limit #{n}
     </select>
 
+    <select id="findByKeywords" resultMap="productMap">
+        select * from product
+        <where>
+            <if test="name!=null">
+                name like concat('%',#{name},'%')
+            </if>
+            <if test="brief!=null">
+                or name like concat('%',#{brief},'%')
+            </if>
+            <if test="detail!=null">
+                or name like concat('%',#{detail},'%')
+            </if>
+
+        </where>
+    </select>
+
 </mapper>
