@@ -1,8 +1,8 @@
 package com.xhxy.eshop.controller;
 
 import com.xhxy.eshop.entity.Faq;
-import com.xhxy.eshop.service.FaqService;
-import com.xhxy.eshop.service.impl.mybatis.FaqServiceImpl;
+import com.xhxy.eshop.mapper.FaqMapper;
+import com.xhxy.eshop.util.MybatisUtils;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +13,7 @@ import java.util.List;
 @WebServlet("/faq")
 public class FaqController  extends BaseServlet {
 
-	private FaqService faqService = new FaqServiceImpl();
+	private FaqMapper faqService = MybatisUtils.getSession().getMapper(FaqMapper.class);
 	
 	public String index(HttpServletRequest request, HttpServletResponse response) {
 		List<Faq> faqs = faqService.findAll();

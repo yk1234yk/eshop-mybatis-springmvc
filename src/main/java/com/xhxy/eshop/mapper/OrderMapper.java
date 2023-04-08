@@ -3,6 +3,7 @@ package com.xhxy.eshop.mapper;
 import com.xhxy.eshop.entity.Address;
 import com.xhxy.eshop.entity.Cart;
 import com.xhxy.eshop.entity.Order;
+import com.xhxy.eshop.entity.OrderItem;
 
 import java.util.List;
 
@@ -20,5 +21,7 @@ public interface OrderMapper {
 	
 	// 保存（插入）一个Order订单(完整数据)，返回新插入的id值（自增长）
 	public Integer save(Order order);
-	
+
+	//保存（插入）多个OrderItem：从购物车--> 订单
+	public Integer batchSave(List<OrderItem> orderItemList);
 }

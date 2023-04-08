@@ -28,4 +28,19 @@
                     select="com.xhxy.eshop.mapper.OrderItemMapper.findByOrderId"
                     fetchType="lazy"/>
     </resultMap>
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into orders(user_id,address_id,total,status,createtime)
+        values(#{user.id},#{address.id},#{total},#{status},#{createTime})
+    </insert>
+
+    <insert id="batchSave" parameterType="java.util.List" useGeneratedKeys="false">
+        insert into orderitem(product_id,quantity,order_id,total) values
+        <foreach collection="list" item="orderItem" index="index" separator=",">
+        (
+        #{orderItem.product.id},#{orderItem.quantity},
+        #{orderItem.order.id},#{orderItem.total}
+        )
+        </foreach>
+    </insert>
 </mapper>

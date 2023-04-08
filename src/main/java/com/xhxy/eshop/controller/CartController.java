@@ -4,8 +4,8 @@ import com.xhxy.eshop.entity.Cart;
 import com.xhxy.eshop.entity.Product;
 import com.xhxy.eshop.service.CartService;
 import com.xhxy.eshop.service.ProductService;
-import com.xhxy.eshop.service.impl.jdbc.CartServiceImpl;
-import com.xhxy.eshop.service.impl.jdbc.ProductServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.CartServiceImpl;//实验11
+import com.xhxy.eshop.service.impl.mybatis.ProductServiceImpl;//实验11
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

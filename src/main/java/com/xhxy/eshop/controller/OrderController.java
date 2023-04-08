@@ -7,9 +7,9 @@ import com.xhxy.eshop.entity.Cart;
 import com.xhxy.eshop.service.AddressService;
 import com.xhxy.eshop.service.CartService;
 import com.xhxy.eshop.service.OrderService;
-import com.xhxy.eshop.service.impl.jdbc.AddressServiceImpl;
-import com.xhxy.eshop.service.impl.jdbc.CartServiceImpl;
-import com.xhxy.eshop.service.impl.jdbc.OrderServiceImpl;
+import com.xhxy.eshop.service.impl.mybatis.AddressServiceImpl;//实验11
+import com.xhxy.eshop.service.impl.mybatis.CartServiceImpl;//实验11
+import com.xhxy.eshop.service.impl.mybatis.OrderServiceImpl;//实验11
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;

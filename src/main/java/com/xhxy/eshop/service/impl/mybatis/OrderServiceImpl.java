@@ -1,10 +1,8 @@
 package com.xhxy.eshop.service.impl.mybatis;
 
-import com.xhxy.eshop.dao.CartDao;
-import com.xhxy.eshop.dao.CartItemDao;
-import com.xhxy.eshop.dao.impl.CartDaoImpl;
-import com.xhxy.eshop.dao.impl.CartItemDaoImpl;
 import com.xhxy.eshop.entity.*;
+import com.xhxy.eshop.mapper.CartItemMapper;
+import com.xhxy.eshop.mapper.CartMapper;
 import com.xhxy.eshop.mapper.OrderItemMapper;
 import com.xhxy.eshop.mapper.OrderMapper;
 import com.xhxy.eshop.service.OrderService;
@@ -18,8 +16,8 @@ public class OrderServiceImpl implements OrderService{
 
 	private OrderMapper orderMapper = MybatisUtils.getSession().getMapper(OrderMapper.class);
 	private OrderItemMapper orderItemMapper = MybatisUtils.getSession().getMapper(OrderItemMapper.class);
-	private CartDao cartDao = new CartDaoImpl();
-	private CartItemDao cartItemDao = new CartItemDaoImpl();
+	private CartMapper cartMapper = MybatisUtils.getSession().getMapper(CartMapper.class);
+	private CartItemMapper cartItemMapper = MybatisUtils.getSession().getMapper(CartItemMapper.class);
 
 	// 从购物车 生成 订单
 	@Override
@@ -41,7 +39,7 @@ public class OrderServiceImpl implements OrderService{
 		order = orderMapper.findById(orderId);
 		
 		// 4.取得cart中的所有cartItem
-		List<CartItem> cartItemList = cartItemDao.findByCartId(cart.getId());
+		List<CartItem> cartItemList = cartItemMapper.findByCartId(cart.getId());
 		List<OrderItem> orderItemList = new ArrayList<OrderItem>();
 		
 		// 5.将cartItem转为orderItem，并放入List中
@@ -61,10 +59,10 @@ public class OrderServiceImpl implements OrderService{
 		
 		// 7.清空购物车
 		// 7.1. 先删除 该cart中的所有cartItem项
-		cartItemDao.deleteByCartId(cart.getId());
+		cartItemMapper.deleteByCartId(cart.getId());
 				
 		// 7.2. 再将该cart的total项设为0
-		cartDao.updateTotal(cart.getId(), 0.0F);
+		cartMapper.updateTotal(cart.getId(), 0.0F);
 		
 		return orderId;
 	}
