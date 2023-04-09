@@ -5,6 +5,14 @@
 <configuration>
     <properties resource="jdbc.properties"/>
 
+
+    <settings>
+        <!--有效值true|false 默认为true-->
+        <setting name="cacheEnabled" value="true"/>
+        <!--有效值:SESSION|STATEMENT 默认SESSION-->
+        <setting name="localCacheScope" value="STATEMENT"/>
+    </settings>
+
     <typeAliases>
         <package name="com.xhxy.eshop.entity"/>
     </typeAliases>

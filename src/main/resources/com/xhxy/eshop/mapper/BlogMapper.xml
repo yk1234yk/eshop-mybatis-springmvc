@@ -30,4 +30,5 @@
                     fetchType="lazy"/>
     </resultMap>
 
+    <cache eviction="FIFO" flushInterval="600000" size="64" readOnly="true"/>
 </mapper>

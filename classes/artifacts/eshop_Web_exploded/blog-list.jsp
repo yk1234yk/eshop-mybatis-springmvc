@@ -60,6 +60,11 @@
                     ${blog.createTime}</div>
                 <img class="card-img-top hover-zoom" src="${blog.pic}" alt="Image"> </div>
               <div class="card-body px-0 pb-0">
+                <div>
+                    <a class="d-inline-block link-title btn-link text-small" href="#">${blog.admin.username},</a>
+                    <a class="d-inline-block link-title btn-link text-small" href="#">${blog.admin.department}</a>
+                </div>
+
                 <h4 class="h5 font-w-5 mt-2 mb-0"> 
                 <a class="link-title" href="blog?method=detail&id=${blog.id}">${blog.title}</a> </h4>
               </div>
