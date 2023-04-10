@@ -7,4 +7,7 @@
 	<select id="findAll" resultType="com.xhxy.eshop.entity.Faq">
 		select id,question,answer from faq;
 	</select>
+
+	<cache eviction="FIFO" flushInterval="600000" size="64" readOnly="true"/>
+
 </mapper>

@@ -1,6 +1,7 @@
 package com.xhxy.eshop.service.impl.mybatis;
 
 import com.xhxy.eshop.entity.Blog;
+import com.xhxy.eshop.interceptor.Page;
 import com.xhxy.eshop.mapper.BlogMapper;
 import com.xhxy.eshop.service.BlogService;
 import com.xhxy.eshop.util.MybatisUtils;
@@ -18,6 +19,13 @@ public class BlogServiceImpl implements BlogService {
 	public Blog findByBlogId(Integer blogId) {
 		return blogMapper.findById(blogId);
 	}
+
+	@Override
+	public List<Blog> findByPage(Page page) {
+		return blogMapper.findByPage(page);
+	}
+
+
 	@Override
 	public List<Blog> findLatestBlog(Integer rows) {
 		return blogMapper.findLatestBlog(rows);

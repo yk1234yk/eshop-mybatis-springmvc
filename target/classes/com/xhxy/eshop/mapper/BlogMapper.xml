@@ -6,6 +6,9 @@
     <select id="findAll" resultMap="blogMap">
         select * from blog
     </select>
+    <select id="findByPage" resultMap="blogMap">
+        select * from blog
+    </select>
     <select id="findLatestBlog" resultType="com.xhxy.eshop.entity.Blog">
         select * from blog order by createtime desc limit #{n}
     </select>
@@ -30,4 +33,7 @@
                     fetchType="lazy"/>
     </resultMap>
 
+
+
+    <cache eviction="FIFO" flushInterval="600000" size="64" readOnly="true"/>
 </mapper>

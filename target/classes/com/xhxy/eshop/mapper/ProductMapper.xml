@@ -63,4 +63,7 @@
         </where>
     </select>
 
+    <cache eviction="LRU" flushInterval="30000" size="128" readOnly="true"/>
+
+
 </mapper>

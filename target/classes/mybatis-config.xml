@@ -5,6 +5,14 @@
 <configuration>
     <properties resource="jdbc.properties"/>
 
+
+    <settings>
+        <!--有效值true|false 默认为true-->
+        <setting name="cacheEnabled" value="true"/>
+        <!--有效值:SESSION|STATEMENT 默认SESSION-->
+        <setting name="localCacheScope" value="STATEMENT"/>
+    </settings>
+
     <typeAliases>
         <package name="com.xhxy.eshop.entity"/>
     </typeAliases>
@@ -12,6 +20,10 @@
         <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
                      javaType="com.xhxy.eshop.entity.Status"/>
     </typeHandlers>
+
+    <plugins>
+        <plugin interceptor="com.xhxy.eshop.interceptor.PagePlugin"/>
+    </plugins>
 
     <environments default="development">
         <environment id="development">
@@ -27,5 +39,6 @@
     <mappers>
         <package name="com.xhxy.eshop.mapper"/>
     </mappers>
+
 
 </configuration>

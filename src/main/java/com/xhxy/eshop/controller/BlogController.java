@@ -2,6 +2,7 @@ package com.xhxy.eshop.controller;
 
 import com.xhxy.eshop.entity.Blog;
 import com.xhxy.eshop.entity.Comment;
+import com.xhxy.eshop.interceptor.Page;
 import com.xhxy.eshop.service.BlogService;
 import com.xhxy.eshop.service.CommentService;
 import com.xhxy.eshop.service.UserService;
@@ -21,12 +22,29 @@ public class BlogController  extends BaseServlet {
 	private BlogService blogService = new BlogServiceImpl();
 	private UserService userService = new UserServiceImpl();
 	private CommentService commentService = new CommentServiceImpl();
-	
+
+	public String index(HttpServletRequest request, HttpServletResponse response){
+		return list(request,response);
+	}
+
 	// 文章列表
-	public String index(HttpServletRequest request, HttpServletResponse response) {
-		List<Blog> blogs = blogService.findAll();
-		
-		request.setAttribute("blogs", blogs);
+	public String list(HttpServletRequest request, HttpServletResponse response) {
+		String pageIndex =request.getParameter("pageIndex");
+		Integer index=1;//默认第一项
+		if (pageIndex !=null && !pageIndex.isBlank()){
+			index = Integer.parseInt(pageIndex);
+		}
+		String pageSize = request.getParameter("pageSize");
+		Integer size = 6;
+		if (pageIndex!=null && !pageSize.isBlank()){
+			size = Integer.parseInt(pageSize);
+		}
+		Page page = new Page(size,index);
+
+		List<Blog> blogList = blogService.findByPage(page);
+
+		request.setAttribute("page",page);
+		request.setAttribute("blogs", blogList);
 		return "blog-list.jsp";
 	}
 	
