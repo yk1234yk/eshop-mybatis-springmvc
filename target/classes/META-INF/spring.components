@@ -1,0 +1,14 @@
+com.xhxy.eshop.controller.AccountController=javax.servlet.annotation.WebServlet,javax.servlet.annotation.MultipartConfig
+com.xhxy.eshop.controller.BlogController=javax.servlet.annotation.WebServlet
+com.xhxy.eshop.controller.CartController=javax.servlet.annotation.WebServlet
+com.xhxy.eshop.controller.CategoryController=javax.servlet.annotation.WebServlet
+com.xhxy.eshop.controller.FaqController=javax.servlet.annotation.WebServlet
+com.xhxy.eshop.controller.IndexController=javax.servlet.annotation.WebServlet
+com.xhxy.eshop.controller.OrderController=javax.servlet.annotation.WebServlet
+com.xhxy.eshop.controller.ProductController=javax.servlet.annotation.WebServlet
+com.xhxy.eshop.controller.UserController=javax.servlet.annotation.WebServlet
+com.xhxy.eshop.filter.CharacterFilter=javax.servlet.annotation.WebFilter
+com.xhxy.eshop.filter.WordFilter=javax.servlet.annotation.WebFilter
+com.xhxy.eshop.listener.MyContextListener=javax.servlet.annotation.WebListener
+com.xhxy.eshop.listener.MyRequestListener=javax.servlet.annotation.WebListener
+com.xhxy.eshop.listener.MySessionListener=javax.servlet.annotation.WebListener
